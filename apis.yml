@@ -1,15 +1,12 @@
 name: Six Sigma
-description: A data-driven methodology and set of techniques for process improvement
-  that seeks to reduce defects and variability in business processes to achieve near-perfect
-  quality (3.4 defects per million opportunities). Organizations adopt it to address
-  specific technical or business challenges in their environments.
+description: A data-driven methodology and set of techniques for process improvement that seeks to reduce defects and variability in business processes to achieve near-perfect quality (3.4 defects per million opportunities). Organizations adopt it to address specific technical or business challenges in their environments.
 url: https://www.asq.org/quality-resources/six-sigma
 tags:
-- Quality Management
-- Process Improvement
-- Lean Manufacturing
-- Business Excellence
-- Statistical Analysis
+  - Business Excellence
+  - Lean Manufacturing
+  - Process Improvement
+  - Quality Management
+  - Statistical Analysis
 created: '2025'
 modified: '2025'
 apis: []

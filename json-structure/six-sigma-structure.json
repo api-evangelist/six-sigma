@@ -1,0 +1,103 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Six Sigma Structure",
+  "description": "JSON structure documentation for Six Sigma methodology concepts, project artifacts, and quality metrics",
+  "version": "1.0",
+  "resources": {
+    "Project": {
+      "description": "A Six Sigma improvement project following DMAIC or DMADV methodology",
+      "fields": {
+        "id": { "type": "string", "description": "Unique project identifier" },
+        "name": { "type": "string", "description": "Project name" },
+        "methodology": { "type": "string", "enum": ["DMAIC", "DMADV", "DFSS", "LEAN", "LEAN_SIX_SIGMA"] },
+        "phase": { "type": "string", "enum": ["Define", "Measure", "Analyze", "Improve", "Control"] },
+        "champion": { "type": "string", "description": "Executive sponsor" },
+        "blackBelt": { "type": "string", "description": "Project leader (Black Belt)" },
+        "metrics": { "type": "object", "items": "ProjectMetrics" }
+      }
+    },
+    "ProjectMetrics": {
+      "description": "Statistical performance metrics for a Six Sigma project",
+      "fields": {
+        "baselineSigmaLevel": { "type": "number", "description": "Process sigma level before improvement" },
+        "targetSigmaLevel": { "type": "number", "description": "Target sigma level" },
+        "baselineDPMO": { "type": "number", "description": "Baseline defects per million opportunities" },
+        "targetDPMO": { "type": "number", "description": "Target DPMO" },
+        "capabilityIndex": { "type": "number", "description": "Process capability Cpk value" },
+        "estimatedAnnualSavings": { "type": "number", "description": "Projected annual cost savings" }
+      }
+    },
+    "DefectMeasurement": {
+      "description": "A defect measurement record for a process step",
+      "fields": {
+        "processStep": { "type": "string", "description": "The process step being measured" },
+        "defectsObserved": { "type": "integer", "description": "Number of defects observed" },
+        "opportunities": { "type": "integer", "description": "Number of opportunities for defects" },
+        "units": { "type": "integer", "description": "Number of units inspected" },
+        "DPMO": { "type": "number", "description": "Calculated defects per million opportunities" },
+        "sigmaLevel": { "type": "number", "description": "Calculated sigma level" },
+        "measurementDate": { "type": "string", "format": "date-time" }
+      }
+    },
+    "ControlChart": {
+      "description": "Statistical process control chart data",
+      "fields": {
+        "chartType": { "type": "string", "enum": ["X-bar", "R", "S", "I-MR", "P", "NP", "C", "U"], "description": "Type of control chart" },
+        "processName": { "type": "string", "description": "Name of the process being charted" },
+        "centerLine": { "type": "number", "description": "Control chart center line (mean)" },
+        "upperControlLimit": { "type": "number", "description": "Upper control limit (UCL)" },
+        "lowerControlLimit": { "type": "number", "description": "Lower control limit (LCL)" },
+        "dataPoints": { "type": "array", "description": "Time-series data points plotted on the chart" },
+        "outOfControlPoints": { "type": "array", "description": "Points violating control rules" }
+      }
+    },
+    "FishboneDiagram": {
+      "description": "Ishikawa (fishbone / cause-and-effect) diagram structure",
+      "fields": {
+        "effect": { "type": "string", "description": "The problem/effect being analyzed" },
+        "categories": {
+          "type": "array",
+          "description": "Cause categories (6M: Machine, Method, Material, Man, Measurement, Mother Nature)",
+          "items": {
+            "type": "object",
+            "properties": {
+              "category": { "type": "string" },
+              "causes": { "type": "array", "items": "string" }
+            }
+          }
+        }
+      }
+    }
+  },
+  "methodology": {
+    "DMAIC": {
+      "description": "Define-Measure-Analyze-Improve-Control: Used for improving existing processes",
+      "phases": {
+        "Define": {
+          "purpose": "Define the problem, customer requirements, and project goals",
+          "keyTools": ["Project Charter", "SIPOC", "Voice of Customer (VOC)", "Critical-to-Quality (CTQ) Tree"]
+        },
+        "Measure": {
+          "purpose": "Measure current process performance and establish baseline",
+          "keyTools": ["Process Map", "Data Collection Plan", "Measurement System Analysis (MSA)", "Baseline Sigma Calculation"]
+        },
+        "Analyze": {
+          "purpose": "Identify root causes of defects and process variation",
+          "keyTools": ["Fishbone Diagram", "5 Whys", "Pareto Analysis", "Regression Analysis", "Hypothesis Testing"]
+        },
+        "Improve": {
+          "purpose": "Develop and implement solutions to eliminate root causes",
+          "keyTools": ["Design of Experiments (DOE)", "FMEA", "Pilot Testing", "Solution Selection Matrix"]
+        },
+        "Control": {
+          "purpose": "Sustain improvements and prevent regression",
+          "keyTools": ["Control Charts", "Control Plan", "Standard Operating Procedures", "Process Audits"]
+        }
+      }
+    },
+    "DMADV": {
+      "description": "Define-Measure-Analyze-Design-Verify: Used for designing new processes or products",
+      "phases": ["Define", "Measure", "Analyze", "Design", "Verify"]
+    }
+  }
+}

@@ -1,0 +1,246 @@
+aid: six-sigma
+name: Six Sigma Vocabulary
+description: >-
+  Domain vocabulary, terminology, and taxonomy for the Six Sigma quality management
+  methodology, covering the DMAIC and DMADV frameworks, statistical tools, belt
+  certification levels, and quality measurement systems.
+created: '2026-05-02'
+modified: '2026-05-02'
+
+domains:
+  - name: Methodology
+    description: Core Six Sigma methodology frameworks
+    terms:
+      - term: Six Sigma
+        definition: >-
+          A disciplined, data-driven methodology for eliminating defects in any process,
+          from manufacturing to transactional to service, aiming for fewer than 3.4
+          defects per million opportunities (DPMO). Developed at Motorola in the 1980s
+          and popularized by General Electric under Jack Welch.
+        aliases: [6σ, 6 Sigma]
+        relatedTerms: [DMAIC, DMADV, Lean Six Sigma, DPMO]
+
+      - term: DMAIC
+        definition: >-
+          Define-Measure-Analyze-Improve-Control: The five-phase problem-solving
+          framework used in Six Sigma for improving an existing business process.
+          Each phase has specific deliverables and tollgate reviews.
+        aliases: [DMAIC cycle]
+        relatedTerms: [DMADV, Define Phase, Measure Phase, Analyze Phase, Improve Phase, Control Phase]
+
+      - term: DMADV
+        definition: >-
+          Define-Measure-Analyze-Design-Verify: The Six Sigma framework for creating
+          new processes or products that meet Six Sigma quality levels from inception.
+          Also known as DFSS (Design for Six Sigma).
+        aliases: [DFSS, Design for Six Sigma]
+        relatedTerms: [DMAIC, Six Sigma]
+
+      - term: Lean Six Sigma
+        definition: >-
+          A combined methodology that integrates Lean manufacturing principles
+          (waste elimination, flow efficiency) with Six Sigma statistical tools
+          (variation reduction, defect elimination) for comprehensive process improvement.
+        aliases: [LSS, Lean Sigma]
+        relatedTerms: [Six Sigma, Lean Manufacturing, Waste]
+
+  - name: DMAIC Phases
+    description: The five phases of the DMAIC improvement cycle
+    terms:
+      - term: Define Phase
+        definition: >-
+          The first DMAIC phase where the problem, project scope, customer requirements,
+          and project team are established. Key deliverables include the Project Charter,
+          SIPOC diagram, and Voice of Customer analysis.
+        keyTools: ["Project Charter", "SIPOC", "VOC", "CTQ Tree", "Problem Statement"]
+        relatedTerms: [DMAIC, Project Charter, SIPOC, Voice of Customer]
+
+      - term: Measure Phase
+        definition: >-
+          The second DMAIC phase where the current process performance is quantified
+          and a baseline sigma level is established. Includes data collection, measurement
+          system analysis, and capability baseline.
+        keyTools: ["Process Map", "MSA", "Data Collection Plan", "Baseline Sigma", "Cpk"]
+        relatedTerms: [DMAIC, Sigma Level, DPMO, MSA, Cpk]
+
+      - term: Analyze Phase
+        definition: >-
+          The third DMAIC phase where root causes of defects and process variation are
+          identified using statistical analysis and structured root cause tools.
+        keyTools: ["Fishbone Diagram", "5 Whys", "Pareto Chart", "Hypothesis Testing", "Regression"]
+        relatedTerms: [DMAIC, Root Cause Analysis, Fishbone Diagram, Pareto Chart]
+
+      - term: Improve Phase
+        definition: >-
+          The fourth DMAIC phase where solutions are developed, tested, and implemented
+          to address verified root causes. Design of Experiments (DOE) and pilot testing
+          validate improvements before full deployment.
+        keyTools: ["DOE", "FMEA", "Pilot Test", "Solution Matrix", "Future State Map"]
+        relatedTerms: [DMAIC, Design of Experiments, FMEA]
+
+      - term: Control Phase
+        definition: >-
+          The fifth and final DMAIC phase where improvements are sustained through
+          monitoring systems, control charts, updated procedures, and handoff to process owners.
+        keyTools: ["Control Chart", "Control Plan", "SOPs", "Response Plan"]
+        relatedTerms: [DMAIC, Control Chart, Control Plan]
+
+  - name: Statistical Tools
+    description: Key statistical analysis tools used in Six Sigma
+    terms:
+      - term: DPMO
+        definition: >-
+          Defects Per Million Opportunities: The standard unit of quality measurement
+          in Six Sigma. Calculated as (Defects / (Units × Opportunities)) × 1,000,000.
+          Six Sigma quality corresponds to 3.4 DPMO.
+        aliases: [Defects Per Million Opportunities]
+        relatedTerms: [Sigma Level, Defect, Opportunity]
+
+      - term: Sigma Level
+        definition: >-
+          A statistical measure of process performance relative to customer specifications.
+          Higher sigma levels indicate fewer defects. Six Sigma (6σ) corresponds to
+          3.4 DPMO with a 1.5-sigma shift applied.
+        aliases: [sigma score, process sigma]
+        values:
+          - sigma: 1, DPMO: 691462, yield: "30.85%"
+          - sigma: 2, DPMO: 308538, yield: "69.15%"
+          - sigma: 3, DPMO: 66807, yield: "93.32%"
+          - sigma: 4, DPMO: 6210, yield: "99.38%"
+          - sigma: 5, DPMO: 233, yield: "99.977%"
+          - sigma: 6, DPMO: 3.4, yield: "99.9997%"
+        relatedTerms: [DPMO, Cpk, Process Capability]
+
+      - term: Cpk
+        definition: >-
+          Process Capability Index: A statistical measure of a process's ability to
+          produce output within specification limits, accounting for process centering.
+          A Cpk of 2.0 corresponds to Six Sigma quality. Values above 1.33 are
+          generally considered capable.
+        aliases: [Process Capability, capability index]
+        relatedTerms: [Sigma Level, Cp, Specification Limits]
+
+      - term: Control Chart
+        definition: >-
+          A time-series graph with statistically calculated control limits used to
+          monitor process stability and detect special causes of variation. Common types
+          include X-bar R charts (for measurement data) and P/NP charts (for attribute data).
+        aliases: [Shewhart chart, statistical process control chart, SPC chart]
+        relatedTerms: [UCL, LCL, Special Cause Variation, Common Cause Variation]
+
+      - term: MSA
+        definition: >-
+          Measurement System Analysis: A collection of statistical methods (Gauge R&R,
+          linearity, stability studies) used to evaluate the accuracy, precision, and
+          reliability of a measurement system before using data for Six Sigma analysis.
+        aliases: [Gauge R&R, Measurement System Analysis]
+        relatedTerms: [Repeatability, Reproducibility, Measure Phase]
+
+      - term: Design of Experiments
+        definition: >-
+          A structured statistical approach for planning experiments that identifies
+          the optimal combination of process inputs to minimize defects. DOE efficiently
+          tests multiple factors simultaneously rather than one-at-a-time testing.
+        aliases: [DOE, Designed Experiment]
+        relatedTerms: [Improve Phase, Factorial Design, Response Surface]
+
+  - name: Quality Tools
+    description: Structured quality analysis tools used in Six Sigma projects
+    terms:
+      - term: Project Charter
+        definition: >-
+          A formal document that authorizes a Six Sigma project, defines its scope,
+          business case, problem and goal statements, team members, timeline, and
+          expected financial benefits. Required tollgate for Define phase.
+        relatedTerms: [Define Phase, SIPOC, Business Case]
+
+      - term: SIPOC
+        definition: >-
+          Suppliers-Inputs-Process-Outputs-Customers: A high-level process map used
+          in the Define phase to establish scope boundaries and identify key process
+          elements before detailed process mapping.
+        relatedTerms: [Define Phase, Process Map, Voice of Customer]
+
+      - term: Voice of Customer
+        definition: >-
+          The systematic process of capturing customer requirements, needs, and
+          expectations that are translated into measurable Critical-to-Quality (CTQ)
+          characteristics. Methods include surveys, interviews, and focus groups.
+        aliases: [VOC]
+        relatedTerms: [CTQ, Define Phase, Customer Requirements]
+
+      - term: CTQ
+        definition: >-
+          Critical-to-Quality: Measurable characteristics of a product or service
+          that must be met to satisfy customer requirements. CTQs are derived from VOC
+          analysis and serve as the measurable targets for Six Sigma projects.
+        aliases: [Critical-to-Quality, CTQ Tree]
+        relatedTerms: [Voice of Customer, Specification Limits]
+
+      - term: FMEA
+        definition: >-
+          Failure Mode and Effects Analysis: A proactive risk assessment tool used
+          in the Improve and Control phases to identify potential failure modes, their
+          causes, and effects on the process or product, prioritized by Risk Priority
+          Number (RPN = Severity × Occurrence × Detection).
+        aliases: [Failure Mode and Effects Analysis]
+        relatedTerms: [RPN, Improve Phase, Control Phase]
+
+      - term: Fishbone Diagram
+        definition: >-
+          Also known as the Ishikawa diagram or cause-and-effect diagram. A visual
+          tool used in the Analyze phase to categorize potential root causes of a
+          defect. The 6M categories (Machine, Method, Material, Man, Measurement,
+          Mother Nature) provide a systematic framework.
+        aliases: [Ishikawa diagram, cause-and-effect diagram]
+        relatedTerms: [Analyze Phase, Root Cause Analysis, 5 Whys]
+
+      - term: Pareto Chart
+        definition: >-
+          A bar chart combined with a line graph showing the relative frequency of
+          defect categories, based on the Pareto principle (80/20 rule) that roughly
+          80% of defects come from 20% of causes. Used in the Analyze phase.
+        aliases: [Pareto Analysis, 80/20 chart]
+        relatedTerms: [Analyze Phase, Vital Few, Trivial Many]
+
+  - name: Belt Certifications
+    description: Six Sigma practitioner certification levels
+    terms:
+      - term: Black Belt
+        definition: >-
+          A full-time Six Sigma project leader with advanced statistical skills who
+          leads complex improvement projects, mentors Green Belts, and typically
+          manages multiple projects per year targeting significant financial benefits.
+        aliases: [Six Sigma Black Belt, BB]
+        relatedTerms: [Green Belt, Master Black Belt, Champion]
+
+      - term: Green Belt
+        definition: >-
+          A part-time Six Sigma practitioner who leads smaller improvement projects
+          within their functional area while maintaining their primary job responsibilities.
+          Works under the guidance of a Black Belt on larger projects.
+        aliases: [Six Sigma Green Belt, GB]
+        relatedTerms: [Black Belt, Yellow Belt]
+
+      - term: Yellow Belt
+        definition: >-
+          An entry-level Six Sigma practitioner with foundational knowledge of the
+          methodology who participates in improvement project teams as a subject matter
+          expert or data collector.
+        aliases: [Six Sigma Yellow Belt, YB]
+        relatedTerms: [Green Belt, White Belt]
+
+      - term: Master Black Belt
+        definition: >-
+          The highest Six Sigma certification level: a subject matter expert who trains
+          and coaches Black Belts and Green Belts, develops quality strategies, and
+          advises executive leadership on quality initiatives.
+        aliases: [MBB, Six Sigma Master Black Belt]
+        relatedTerms: [Black Belt, Champion]
+
+      - term: Champion
+        definition: >-
+          An executive-level sponsor who provides organizational authority, resources,
+          and strategic direction to Six Sigma projects. Champions remove organizational
+          barriers and ensure projects align with business priorities.
+        relatedTerms: [Black Belt, Deployment Leader]

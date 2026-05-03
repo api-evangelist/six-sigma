@@ -1,0 +1,123 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/api-evangelist/six-sigma/blob/main/json-schema/six-sigma-project-schema.json",
+  "title": "Six Sigma Project",
+  "description": "Schema representing a Six Sigma improvement project following the DMAIC (Define-Measure-Analyze-Improve-Control) methodology",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier for the Six Sigma project"
+    },
+    "name": {
+      "type": "string",
+      "description": "Name or title of the project"
+    },
+    "description": {
+      "type": "string",
+      "description": "Project description and scope statement"
+    },
+    "methodology": {
+      "type": "string",
+      "description": "The Six Sigma methodology framework used",
+      "enum": ["DMAIC", "DMADV", "DFSS", "LEAN", "LEAN_SIX_SIGMA"]
+    },
+    "phase": {
+      "type": "string",
+      "description": "Current phase of the DMAIC project",
+      "enum": ["Define", "Measure", "Analyze", "Improve", "Control", "Closed"]
+    },
+    "champion": {
+      "type": "string",
+      "description": "Executive sponsor / champion of the project"
+    },
+    "blackBelt": {
+      "type": "string",
+      "description": "Six Sigma Black Belt leading the project"
+    },
+    "greenBelt": {
+      "type": "string",
+      "description": "Six Sigma Green Belt supporting the project"
+    },
+    "processOwner": {
+      "type": "string",
+      "description": "Owner of the business process being improved"
+    },
+    "startDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Project start date"
+    },
+    "targetCompletionDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Target completion date"
+    },
+    "businessCase": {
+      "type": "string",
+      "description": "Business justification and expected financial benefit"
+    },
+    "problemStatement": {
+      "type": "string",
+      "description": "Clear statement of the problem being addressed"
+    },
+    "goalStatement": {
+      "type": "string",
+      "description": "Measurable goal and target improvement level"
+    },
+    "metrics": {
+      "type": "object",
+      "description": "Key project metrics",
+      "properties": {
+        "baselineSigmaLevel": {
+          "type": "number",
+          "description": "Baseline process sigma level before improvement"
+        },
+        "targetSigmaLevel": {
+          "type": "number",
+          "description": "Target sigma level after improvement"
+        },
+        "baselineDPMO": {
+          "type": "number",
+          "description": "Baseline defects per million opportunities"
+        },
+        "targetDPMO": {
+          "type": "number",
+          "description": "Target defects per million opportunities"
+        },
+        "baselineCapabilityIndex": {
+          "type": "number",
+          "description": "Baseline process capability (Cpk)"
+        },
+        "targetCapabilityIndex": {
+          "type": "number",
+          "description": "Target process capability (Cpk)"
+        },
+        "estimatedAnnualSavings": {
+          "type": "number",
+          "description": "Estimated annual cost savings in currency"
+        }
+      }
+    },
+    "deliverables": {
+      "type": "array",
+      "description": "Project deliverables and gate review artifacts",
+      "items": {
+        "type": "object",
+        "properties": {
+          "phase": { "type": "string" },
+          "artifact": { "type": "string" },
+          "completed": { "type": "boolean" },
+          "completedDate": { "type": "string", "format": "date" }
+        }
+      }
+    },
+    "status": {
+      "type": "string",
+      "description": "Current project status",
+      "enum": ["Active", "On Hold", "Completed", "Cancelled"]
+    }
+  },
+  "required": ["id", "name", "methodology", "phase"],
+  "additionalProperties": false
+}

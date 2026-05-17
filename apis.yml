@@ -86,7 +86,7 @@ apis:
 common:
   - type: Website
     url: https://www.asq.org/quality-resources/six-sigma
-  - type: JSON-LD
+  - type: JSONLD
     url: json-ld/six-sigma-context.jsonld
   - type: Vocabulary
     url: vocabulary/six-sigma-vocabulary.yml

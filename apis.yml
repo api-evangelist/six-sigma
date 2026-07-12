@@ -84,6 +84,8 @@ apis:
         type: Website
 
 common:
+  - type: DomainSecurity
+    url: security/six-sigma-domain-security.yml
   - type: Website
     url: https://www.asq.org/quality-resources/six-sigma
   - type: JSONLD

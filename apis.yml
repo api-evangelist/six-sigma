@@ -1,6 +1,7 @@
 aid: six-sigma
 url: https://raw.githubusercontent.com/api-evangelist/six-sigma/refs/heads/main/apis.yml
 name: Six Sigma
+kind: topic
 description: >-
   Six Sigma is a data-driven process improvement methodology that uses statistical
   analysis to reduce defects and variability in business processes, targeting fewer

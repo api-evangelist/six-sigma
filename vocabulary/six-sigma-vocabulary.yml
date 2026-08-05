@@ -103,12 +103,12 @@ domains:
           3.4 DPMO with a 1.5-sigma shift applied.
         aliases: [sigma score, process sigma]
         values:
-          - sigma: 1, DPMO: 691462, yield: "30.85%"
-          - sigma: 2, DPMO: 308538, yield: "69.15%"
-          - sigma: 3, DPMO: 66807, yield: "93.32%"
-          - sigma: 4, DPMO: 6210, yield: "99.38%"
-          - sigma: 5, DPMO: 233, yield: "99.977%"
-          - sigma: 6, DPMO: 3.4, yield: "99.9997%"
+          - sigma: "1, DPMO: 691462, yield: \"30.85%\""
+          - sigma: "2, DPMO: 308538, yield: \"69.15%\""
+          - sigma: "3, DPMO: 66807, yield: \"93.32%\""
+          - sigma: "4, DPMO: 6210, yield: \"99.38%\""
+          - sigma: "5, DPMO: 233, yield: \"99.977%\""
+          - sigma: "6, DPMO: 3.4, yield: \"99.9997%\""
         relatedTerms: [DPMO, Cpk, Process Capability]
 
       - term: Cpk

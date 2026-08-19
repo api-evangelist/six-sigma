@@ -1,4 +1,5 @@
 aid: six-sigma
+specificationVersion: '0.23'
 accessModel:
   pricing: freemium
   onboarding: unknown
